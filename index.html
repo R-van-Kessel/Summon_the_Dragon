@@ -11,49 +11,49 @@ body {
     background: #0e1621;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+/* ===== TITEL ===== */
 h1 {
     display: flex;
-    justify-content: center;   /* horizontaal centrum */
-    position: relative;
+    justify-content: center;
     margin: 20px 0;
+    position: relative;
     z-index: 10;
 }
 
-/* ===== SITE TITLE DRAGON HOVER ===== */
 .site-title {
     position: relative;
     cursor: default;
 }
 
-/* DRAGON IMAGE - full page & subtiel */
+/* ===== DRAGON ===== */
 .site-title .dragon {
     position: fixed;
-    inset: 0;                       
+    inset: 0;
     width: 100vw;
     height: 100vh;
     object-fit: contain;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s ease;
     z-index: 5;
-    filter: drop-shadow(0 0 40px rgba(102,192,244,0.9));
-    animation: float 10s ease-in-out infinite alternate;
+    transition: opacity 0.4s ease;
+    filter: drop-shadow(0 0 50px rgba(102,192,244,0.9));
+    animation: float 12s ease-in-out infinite alternate;
+    transform: translate(var(--x, 0), var(--y, 0));
 }
 
-/* SHOW DRAGON ON HOVER */
+/* SHOW DRAGON */
 .site-title:hover .dragon {
-    opacity: 0.25;   /* subtiel */
+    opacity: 0.25;
 }
 
-/* FLOAT ANIMATION */
+/* ZWEVEN */
 @keyframes float {
-    0% { transform: translate(0px, 0px); }
-    25% { transform: translate(20px, -10px); }
-    50% { transform: translate(-20px, 10px); }
-    75% { transform: translate(10px, -5px); }
-    100% { transform: translate(0px, 0px); }
+    0%   { transform: translate(var(--x, 0), var(--y, 0)); }
+    50%  { transform: translate(calc(var(--x, 0) + 20px), calc(var(--y, 0) - 15px)); }
+    100% { transform: translate(var(--x, 0), var(--y, 0)); }
 }
 
 /* ===== GRID ===== */
@@ -69,7 +69,7 @@ h1 {
 /* ===== GAME CARD ===== */
 .game {
     position: relative;
-    aspect-ratio: 1 / 1;      /* vierkant */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
@@ -77,7 +77,6 @@ h1 {
     text-decoration: none;
 }
 
-/* IMAGE INSIDE CARD */
 .game img {
     width: 100%;
     height: 100%;
@@ -85,12 +84,11 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-/* HOVER ZOOM IMAGE */
 .game:hover img {
     transform: scale(1.05);
 }
 
-/* OVERLAY */
+/* ===== OVERLAY ===== */
 .overlay {
     position: absolute;
     inset: 0;
@@ -104,7 +102,7 @@ h1 {
     padding: 15px;
 }
 
-/* PLAY BUTTON */
+/* PLAY */
 .play {
     position: absolute;
     top: 50%;
@@ -116,21 +114,13 @@ h1 {
     transition: opacity 0.3s ease;
 }
 
-/* TITLE INSIDE CARD */
 .title {
     font-size: 16px;
-    color: #ffffff;
+    color: white;
 }
 
-/* HOVER EFFECTS */
-.game:hover .overlay {
-    opacity: 1;
-}
-
-.game:hover .play {
-    opacity: 1;
-}
-
+.game:hover .overlay { opacity: 1; }
+.game:hover .play { opacity: 1; }
 </style>
 </head>
 
@@ -138,13 +128,13 @@ h1 {
 
 <h1 class="site-title">
     Summon the Dragon
-    <img src="images/dragon.png" alt="Dragon" class="dragon">
+    <img src="images/dragon.png" alt="Dragon" class="dragon" id="dragon">
 </h1>
 
 <div class="grid">
 
 <a href="https://r-van-kessel.github.io/StD_vado/" class="game">
-    <img src="images/vado.png" alt="Vado">
+    <img src="images/vado.png">
     <div class="overlay">
         <div class="play">▶</div>
         <div class="title">(+ - x :)</div>
@@ -152,7 +142,7 @@ h1 {
 </a>
 
 <a href="https://r-van-kessel.github.io/StD_lineaire_vergelijkingen_haakjes/" class="game">
-    <img src="images/lin-verg.png" alt="Lineaire vergelijkingen met haakjes">
+    <img src="images/lin-verg.png">
     <div class="overlay">
         <div class="play">▶</div>
         <div class="title">Lineaire (vergelijkingen)</div>
@@ -160,7 +150,7 @@ h1 {
 </a>
 
 <a href="https://r-van-kessel.github.io/StD_lineaire_vergelijkingen/" class="game">
-    <img src="images/lin-verg.png" alt="Lineaire vergelijkingen">
+    <img src="images/lin-verg.png">
     <div class="overlay">
         <div class="play">▶</div>
         <div class="title">Lineaire vergelijkingen</div>
@@ -168,6 +158,19 @@ h1 {
 </a>
 
 </div>
+
+<script>
+/* ===== PARALLAX DRAGON ===== */
+const dragon = document.getElementById("dragon");
+
+document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 40;
+    const y = (e.clientY / window.innerHeight - 0.5) * 40;
+
+    dragon.style.setProperty("--x", `${x}px`);
+    dragon.style.setProperty("--y", `${y}px`);
+});
+</script>
 
 </body>
 </html>
