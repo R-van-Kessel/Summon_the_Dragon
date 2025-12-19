@@ -8,11 +8,11 @@
 }
 
 body {
-    margin: 0;
+    margin: 0; /*geen witte rand*/
     background: #0e1621;
     color: white;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; /*geen horizontale scrol*/
 }
 
 /* ===== KLEUR VARIANTEN PER PAGINA ===== */
