@@ -189,7 +189,8 @@ h1 {
     font-size: 14px;
     text-align: center;
     color: white;
-   
+} 
+
 /* ===== INTRO TEKST ===== */
 .intro {
     max-width: 900px;      /* ⬅️ hoe breed de tekst mag zijn */
@@ -198,8 +199,6 @@ h1 {
     text-align: center;    /* ⬅️ centreert de tekst zelf */
     font-size: 18px;       /* ⬅️ tekstgrootte */
     line-height: 1.6;      /* ⬅️ regelafstand */
-}
-
 }
 
 /* ===== STAPPEN (STARTPAGINA) ===== */
