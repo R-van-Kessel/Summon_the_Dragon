@@ -1,13 +1,12 @@
 /* =========================
-   MASTER STYLE – STABIEL
+   MASTER STYLE – SUMMON THE DRAGON
    ========================= */
 
-/* ===== RESET ===== */
+/* ===== BASIS ===== */
 * {
     box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
 body {
     margin: 0;
     background: #0e1621;
@@ -16,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== KLEUREN PER PAGINA ===== */
+/* ===== KLEUR VARIANTEN PER PAGINA ===== */
 body.start {
     --accent: #66c0f4;
     --accent-glow: rgba(102,192,244,0.6);
@@ -42,6 +41,11 @@ body.klas3 {
     --accent-glow: rgba(155,89,182,0.6);
 }
 
+body.bovenbouw {
+    --accent: #e74c3c;
+    --accent-glow: rgba(231,76,60,0.6);
+}
+
 /* ===== SUBTIELE ACHTERGROND GLOW ===== */
 body::before {
     content: "";
@@ -55,39 +59,6 @@ body::before {
     z-index: 0;
 }
 
-/* =========================
-   DRAAK (ALTIJD ACHTERGROND)
-   ========================= */
-.site-title .dragon {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: contain;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
-    transition: opacity 0.4s ease;
-    filter: drop-shadow(0 0 60px var(--accent-glow));
-}
-
-.site-title:hover .dragon {
-    opacity: 0.25;
-}
-
-/* =========================
-   ALLE CONTENT ERVOOR
-   ========================= */
-.nav,
-h1,
-.site-title,
-.intro,
-.steps,
-.grid {
-    position: relative;
-    z-index: 2;
-}
-
 /* ===== NAVIGATIE ===== */
 .nav {
     display: flex;
@@ -95,6 +66,8 @@ h1,
     gap: 25px;
     padding: 15px;
     background: #0b131d;
+    z-index: 10;
+    position: relative;
 }
 
 .nav a {
@@ -114,50 +87,34 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 30px 0;
+    position: relative;
+    z-index: 10;
 }
 
-/* ===== INTRO ===== */
-.intro {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
+.site-title {
+    position: relative;
+    cursor: default;
 }
 
-/* ===== STAPPEN (STARTPAGINA) ===== */
-.steps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    max-width: 1300px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.step {
-    width: 350px;
-    text-align: center;
-}
-
-.step img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+/* ===== DRAAK ===== */
+.site-title .dragon {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
     object-fit: contain;
-    border-radius: 16px;
-    background: #1b2838;
-    padding: 10px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 0.4s ease;
+    filter: drop-shadow(0 0 60px var(--accent-glow));
 }
 
-.arrow {
-    font-size: 36px;
-    color: var(--accent);
-    opacity: 0.8;
+.site-title:hover .dragon {
+    opacity: 0.18;
 }
 
-/* ===== GRID ===== */
+/* ===== GRID (GAMES) ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -165,9 +122,11 @@ h1 {
     padding: 30px;
     max-width: 1200px;
     margin: auto;
+    position: relative;
+    z-index: 10;
 }
 
-/* ===== CARDS ===== */
+/* ===== GAME / CARD ===== */
 .game,
 .card {
     aspect-ratio: 1 / 1;
@@ -184,4 +143,73 @@ h1 {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* ===== IMAGE ===== */
+.game img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.game:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== OVERLAY ===== */
+.overlay,
+.card-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game:hover .overlay,
+.card:hover .card-inner {
+    opacity: 1;
+}
+
+/* ===== PLAY BUTTON ===== */
+.play {
+    font-size: 55px;
+    color: var(--accent);
+}
+
+/* ===== TITELS ===== */
+.title,
+.card-title {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+/* ===== STARTPAGINA BLOKKEN ===== */
+.sections {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+    .sections {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .sections {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
