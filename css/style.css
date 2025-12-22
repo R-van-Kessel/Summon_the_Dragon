@@ -97,7 +97,7 @@ h1 {
 
 .site-title {
     position: relative;
-    z-index: 10;          /* ⬅️ zorgt dat het boven de draak staan */
+    z-index: 20;          /* ⬅️ zorgt dat het boven de draak staan */
     cursor: default;
 }
 /* ===== INTRO TEKST ===== */
@@ -164,7 +164,7 @@ h1 {
     object-fit: contain;
     opacity: 0;
     pointer-events: none;
-    z-index: 1; /* ⬅️ expliciet laag */
+    z-index: -1; /* ⬅️ expliciet laag */
     transition: opacity 0.4s ease;
     filter: drop-shadow(0 0 60px var(--accent-glow));
 }
