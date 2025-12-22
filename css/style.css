@@ -95,6 +95,56 @@ h1 {
     position: relative;
     cursor: default;
 }
+/* ===== INTRO TEKST ===== */
+.intro {
+    max-width: 1200px;      /* ⬅️ hoe breed de tekst mag zijn */
+    margin: 40px auto;     /* ⬅️ centreert horizontaal */
+    padding: 0 20px;       /* ⬅️ ruimte links/rechts op kleine schermen */
+    text-align: center;    /* ⬅️ centreert de tekst zelf */
+    font-size: 16px;       /* ⬅️ tekstgrootte */
+    line-height: 1.5;      /* ⬅️ regelafstand */
+}
+
+/* ===== STAPPEN (STARTPAGINA) ===== */
+.steps {
+    display: flex;                 /* zet de 3 stappen naast elkaar */
+    justify-content: center;       /* centreert alles */
+    align-items: center;
+    gap: 30px;                     /* ruimte tussen stappen & pijlen */
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ===== INDIVIDUELE STAP ===== */
+.step {
+    width: 400px;                  /* grootte van elke stap */
+    text-align: center;
+}
+
+/* ===== AFBEELDING ===== */
+.step img {
+    width: 100%;
+    aspect-ratio: 1 / 1;           /* vierkant */
+    object-fit: contain;
+    border-radius: 16px;
+    background: #1b2838;
+    padding: 10px;
+}
+
+/* ===== TEKST ===== */
+.step {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #66c0f4;
+}
+
+/* ===== PIJL ===== */
+.arrow {
+    font-size: 36px;
+    color: #66c0f4;
+    opacity: 0.8;
+}
 
 /* ===== DRAAK ===== */
 .site-title .dragon {
@@ -105,7 +155,7 @@ h1 {
     object-fit: contain;
     opacity: 0;
     pointer-events: none;
-    z-index: 5;
+    z-index: 1; /* ⬅️ expliciet laag */
     transition: opacity 0.4s ease;
     filter: drop-shadow(0 0 60px var(--accent-glow));
 }
@@ -191,53 +241,3 @@ h1 {
     color: white;
 } 
 
-/* ===== INTRO TEKST ===== */
-.intro {
-    max-width: 1200px;      /* ⬅️ hoe breed de tekst mag zijn */
-    margin: 40px auto;     /* ⬅️ centreert horizontaal */
-    padding: 0 20px;       /* ⬅️ ruimte links/rechts op kleine schermen */
-    text-align: center;    /* ⬅️ centreert de tekst zelf */
-    font-size: 16px;       /* ⬅️ tekstgrootte */
-    line-height: 1.5;      /* ⬅️ regelafstand */
-}
-
-/* ===== STAPPEN (STARTPAGINA) ===== */
-.steps {
-    display: flex;                 /* zet de 3 stappen naast elkaar */
-    justify-content: center;       /* centreert alles */
-    align-items: center;
-    gap: 30px;                     /* ruimte tussen stappen & pijlen */
-    max-width: 1300px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-/* ===== INDIVIDUELE STAP ===== */
-.step {
-    width: 400px;                  /* grootte van elke stap */
-    text-align: center;
-}
-
-/* ===== AFBEELDING ===== */
-.step img {
-    width: 100%;
-    aspect-ratio: 1 / 1;           /* vierkant */
-    object-fit: contain;
-    border-radius: 16px;
-    background: #1b2838;
-    padding: 10px;
-}
-
-/* ===== TEKST ===== */
-.step {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #66c0f4;
-}
-
-/* ===== PIJL ===== */
-.arrow {
-    font-size: 36px;
-    color: #66c0f4;
-    opacity: 0.8;
-}
