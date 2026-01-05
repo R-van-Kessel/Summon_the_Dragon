@@ -150,6 +150,48 @@ h1 {
     color: #fafa8d;    /* ⬅️ HIER PAS JE HOVER KLEUR AAN */
     text-shadow: 0 0 10px var(--accent-glow);
 }
+/* ===== STAPPEN (STARTPAGINA) ===== */
+.steps {
+    display: flex;                 /* zet de 3 stappen naast elkaar */
+    justify-content: center;       /* centreert alles */
+    align-items: center;
+    gap: 30px;                     /* ruimte tussen stappen & pijlen */
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+   position: relative;   /* ⬅️ nodig voor z-index */
+    z-index: 10;          /* ⬅️ zorgt dat steps boven de draak staan */
+}
+
+/* ===== INDIVIDUELE STAP ===== */
+.step {
+    width: 400px;                  /* grootte van elke stap */
+    text-align: center;
+}
+
+/* ===== AFBEELDING ===== */
+.step img {
+    width: 100%;
+    aspect-ratio: 1 / 1;           /* vierkant */
+    object-fit: contain;
+    border-radius: 16px;
+    background: #1b2838;
+    padding: 10px;
+}
+
+/* ===== TEKST ===== */
+.step {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* ===== PIJL ===== */
+.arrow {
+    font-size: 36px;
+    color: #ffffff;
+    opacity: 0.8;
+}
 
 
 /* ===== DRAAK ===== */
