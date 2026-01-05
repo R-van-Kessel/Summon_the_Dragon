@@ -91,7 +91,7 @@ body::before {
 .nav a.active {
     background: rgba(255,255,255,.5);
     box-shadow: inset 0 2px 4px rgba(0,0,0,.1);
-    border-bottom: 7px solid var(--accent);
+    border-bottom: 5px solid var(--accent);
 }
 
 /* ===== TITEL ===== */
@@ -110,14 +110,46 @@ h1 {
 }
 /* ===== INTRO TEKST ===== */
 .intro {
-    max-width: 1200px;      /* ⬅️ hoe breed de tekst mag zijn */
-    margin: 40px auto;     /* ⬅️ centreert horizontaal */
-    padding: 0 20px;       /* ⬅️ ruimte links/rechts op kleine schermen */
-    text-align: center;    /* ⬅️ centreert de tekst zelf */
-    font-size: 16px;       /* ⬅️ tekstgrootte */
-    line-height: 1.5;      /* ⬅️ regelafstand */
-    position: relative;   /* ⬅️ nodig voor z-index */
-    z-index: 10;          /* ⬅️ zorgt dat het boven de draak staan */
+    max-width: 800px;        /* ⬅️ breedte van de tekstblok */
+    margin: 40px auto;       /* ⬅️ centreert horizontaal */
+    padding: 0 20px;         
+    text-align: left;        /* ⬅️ AANGEPAST: tekst links uitgelijnd */
+    font-size: 16px;         
+    line-height: 1.6;        
+    position: relative;      
+    z-index: 10;             
+    color: #c7d5e0;          /* ⬅️ HIER PAS JE TEKSTKLEUR AAN */
+}
+
+.intro strong {
+    color: var(--accent);    /* ⬅️ HIER PAS JE KLEUR VAN BOLD TEKST AAN */
+}
+
+/* ===== VERWIJZINGEN ===== */
+.verwijzingen {
+    max-width: 800px;        /* ⬅️ zelfde breedte als intro */
+    margin: 20px auto 60px;  /* ⬅️ centreert horizontaal */
+    padding: 0 20px;
+    text-align: left;        /* ⬅️ tekst links uitgelijnd */
+    position: relative;
+    z-index: 10;
+}
+
+.verwijzingen p {
+    margin: 15px 0;          /* ⬅️ ruimte tussen links */
+}
+
+.verwijzingen a {
+    color: #c7d5e0;          /* ⬅️ HIER PAS JE LINK KLEUR AAN */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.verwijzingen a:hover {
+    color: var(--accent);    /* ⬅️ HIER PAS JE HOVER KLEUR AAN */
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 
