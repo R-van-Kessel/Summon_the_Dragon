@@ -312,3 +312,7 @@ h1 {
     text-align: center;
     color: white;
 } 
+.emoji {
+  font-size: 2rem;
+  text-shadow: 0 0 6px #fff;
+}
