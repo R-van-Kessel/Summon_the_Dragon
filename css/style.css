@@ -150,6 +150,20 @@ h1 {
     color: #fafa8d;    /* ⬅️ HIER PAS JE HOVER KLEUR AAN */
     text-shadow: 0 0 10px var(--accent-glow);
 }
+
+.uitleg a {
+    color: #0066cc;              /* Link kleur */
+    font-size: 16px;             /* Tekst grootte */
+    text-decoration: underline;  /* Onderstreping */
+    transition: all 0.3s ease;   /* Vloeiende overgang */
+}
+
+.uitleg a:hover {
+    color: #ff6600;              /* Hover kleur */
+    font-size: 18px;             /* Tekst grootte bij hover (optioneel) */
+    text-decoration: none;       /* Geen onderstreping bij hover */
+}
+
 /* ===== STAPPEN (STARTPAGINA) ===== */
 .steps {
     display: flex;                 /* zet de 3 stappen naast elkaar */
