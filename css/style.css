@@ -29,23 +29,19 @@ body.rekenen {
 }
 
 body.klas1 {
-    --accent: #ffffff;
     --accent-glow: rgba(6,179,249,0.8);
 }
 
 body.klas2 {
-    --accent: #ffffff;
     --accent-glow: rgba(120,241,6,0.8);
 }
 
 body.klas3 {
-    --accent: #ffffff;
-    --accent-glow: rgba(216,3,27,0.8);
+    --accent-glow: rgba(249,6,24,0.8);
 }
 
 body.bovenbouw {
-    --accent: #ffffff;
-    --accent-glow: rgba(21,248,236,0.8);
+   --accent-glow: rgba(21,248,236,0.8);
 }
 
 /* ===== SUBTIELE ACHTERGROND GLOW ===== */
