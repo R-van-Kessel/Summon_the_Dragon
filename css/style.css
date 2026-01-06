@@ -26,28 +26,28 @@ body.start {
 }
 
 body.rekenles {
-    --accent: #2ecc71;
-    --accent-glow: rgba(46,204,113,0.6);
+    --accent: #ffffff;
+    --accent-glow: rgba(132,10,248,0.6);
 }
 
 body.klas1 {
-    --accent: #f1c40f;
-    --accent-glow: rgba(241,196,15,0.6);
+    --accent: #ffffff;
+    --accent-glow: rgba(92,112,246,0.6);
 }
 
 body.klas2 {
-    --accent: #66c0f4;
-    --accent-glow: rgba(102,192,244,0.6);
+    --accent: #ffffff;
+    --accent-glow: rgba(101,227,8,0.6);
 }
 
 body.klas3 {
-    --accent: #9b59b6;
-    --accent-glow: rgba(155,89,182,0.6);
+    --accent: #ffffff;
+    --accent-glow: rgba(216,3,27,0.6);
 }
 
 body.bovenbouw {
-    --accent: #e74c3c;
-    --accent-glow: rgba(231,76,60,0.6);
+    --accent: #ffffff;
+    --accent-glow: rgba(117,4,70,0.6);
 }
 
 /* ===== SUBTIELE ACHTERGROND GLOW ===== */
