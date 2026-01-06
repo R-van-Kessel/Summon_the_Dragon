@@ -150,18 +150,20 @@ h1 {
     color: #fafa8d;    /* ⬅️ HIER PAS JE HOVER KLEUR AAN */
     text-shadow: 0 0 10px var(--accent-glow);
 }
-
-.uitleg a {
-    color: #0066cc;              /* Link kleur */
-    font-size: 16px;             /* Tekst grootte */
-    text-decoration: underline;  /* Onderstreping */
-    transition: all 0.3s ease;   /* Vloeiende overgang */
+/* ===== UITLEG ===== */
+.uitleg {
     max-width: 1000px;        /* ⬅️ zelfde breedte als intro */
     margin: 20px auto 60px;  /* ⬅️ centreert horizontaal */
     padding: 0 20px;
     text-align: left;        /* ⬅️ tekst links uitgelijnd */
     position: relative;
     z-index: 10;
+}
+.uitleg a {
+    color: #0066cc;              /* Link kleur */
+    font-size: 16px;             /* Tekst grootte */
+    text-decoration: underline;  /* Onderstreping */
+    transition: all 0.3s ease;   /* Vloeiende overgang */
 }
 
 .uitleg a:hover {
