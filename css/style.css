@@ -310,3 +310,40 @@ h1 {
   font-size: 1rem;
   text-shadow: 0 0 6px #fff;
 }
+
+.rekenkaart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.rekenkaart-rij {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+
+.rekenkaart {
+    max-width: 45%;   /* twee naast elkaar passen op de meeste schermen */
+    height: auto;      /* behoudt beeldverhouding */
+    width: auto;
+}
+
+.rekenkaart-onder {
+    max-width: 60%;   /* iets groter mag, want hij staat alleen */
+}
+
+/* Op smalle schermen (telefoon) onder elkaar i.p.v. naast elkaar */
+@media (max-width: 600px) {
+    .rekenkaart {
+        max-width: 90%;
+    }
+    .rekenkaart-onder {
+        max-width: 90%;
+    }
+}
