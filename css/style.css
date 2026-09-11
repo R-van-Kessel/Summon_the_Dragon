@@ -330,7 +330,7 @@ h1 {
 }
 
 .rekenkaart {
-    flex: 1 1 0;        /* beide afbeeldingen krijgen exact evenveel ruimte */
+    flex: 1 1 120%;        /* beide afbeeldingen krijgen exact evenveel ruimte */
     width: 0;           /* nodig i.c.m. flex zodat flex-basis leidend is */
     height: auto;
     object-fit: contain; /* voorkomt vervorming, behoudt verhouding binnen de toegewezen ruimte */
