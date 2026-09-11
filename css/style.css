@@ -337,7 +337,7 @@ h1 {
 }
 
 .rekenkaart-onder {
-    flex: 1 1 100%;     /* pakt de volledige breedte van de rij (= rekenkaart1 + rekenkaart4 samen) */
+    flex: 1 1 120%;     /* pakt de volledige breedte van de rij (= rekenkaart1 + rekenkaart4 samen) */
 }
 
 @media (max-width: 600px) {
