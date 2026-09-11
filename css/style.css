@@ -317,33 +317,31 @@ h1 {
     align-items: center;
     gap: 1rem;
     width: 100%;
+    max-width: 900px;   /* stel dit in op wat visueel prettig is */
+    margin: 0 auto;
 }
 
 .rekenkaart-rij {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
 }
 
 .rekenkaart {
-    max-width: 45%;   /* twee naast elkaar passen op de meeste schermen */
-    height: auto;      /* behoudt beeldverhouding */
-    width: auto;
+    flex: 1 1 0;        /* beide afbeeldingen krijgen exact evenveel ruimte */
+    width: 0;           /* nodig i.c.m. flex zodat flex-basis leidend is */
+    height: auto;
+    object-fit: contain; /* voorkomt vervorming, behoudt verhouding binnen de toegewezen ruimte */
 }
 
 .rekenkaart-onder {
-    max-width: 60%;   /* iets groter mag, want hij staat alleen */
+    flex: 1 1 100%;     /* pakt de volledige breedte van de rij (= rekenkaart1 + rekenkaart4 samen) */
 }
 
-/* Op smalle schermen (telefoon) onder elkaar i.p.v. naast elkaar */
 @media (max-width: 600px) {
-    .rekenkaart {
-        max-width: 90%;
-    }
-    .rekenkaart-onder {
-        max-width: 90%;
+    .rekenkaart-container {
+        max-width: 100%;
     }
 }
